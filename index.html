@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Combot Stats Login</title>
+  <!-- <meta http-equiv="Content-Security-Policy"  content=" frame-ancestors http://127.0.0.1/" /> -->
+
+  <link rel="stylesheet" href="">
+  <script type="text/javascript" defer>
+    function onTelegramAuth(user) {
+      console.log({ user })
+      const userDetailsCompoenent = document.getElementById('telegram_user_details')
+      userDetailsCompoenent.innerText = `[Logged in as ${user.first_name}  ${user.last_name} ${user.id} ${user.username}]`
+
+    }
+    
+  </script>
+</head>
+
+<body>
+
+  <script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-login="test_telegram_daily_bot" data-size="large"
+    data-onauth="onTelegramAuth(user)" data-request-access="write">
+  </script>
+
+  <iframe id="telegram-login-combot" src="https://oauth.telegram.org/embed/combot?origin=http://127.0.0.1&amp;size=large&amp;request_access=write" width="238" height="40" frameborder="0" scrolling="no" style="overflow: hidden; border: none; height: 40px; width: 276px;"></iframe>
+
+  <div>
+    <p id="telegram_user_details">
+      []
+    </p>
+  </div>
+  <button onclick="login()" id="telegram_login_btn">onClick</button>
+  <iframe src="http://example.com/" ></iframe>
+</body>
+
+</html>
