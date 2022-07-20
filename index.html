@@ -13,7 +13,9 @@
     function onTelegramAuth(user) {
       console.log({ user })
       const userDetailsCompoenent = document.getElementById('telegram_user_details')
-      userDetailsCompoenent.innerText = `[Logged in as ${user.first_name}  ${user.last_name} ${user.id} ${user.username}]`
+      userDetailsCompoenent.innerText = `<a href="https://combot.org/c/-1001362720327/a" >
+        [Logged in as ${user.first_name}  ${user.last_name} ${user.id} ${user.username}] 
+        </a>`
 
 //   {
 //     "user": {
