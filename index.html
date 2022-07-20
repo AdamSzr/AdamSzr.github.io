@@ -7,6 +7,7 @@
   <title>Telegram Combot Stats Login</title>
   <!-- <meta http-equiv="Content-Security-Policy"  content=" frame-ancestors http://127.0.0.1/" /> -->
 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="stylesheet" href="">
   <script type="text/javascript" defer>
     function onTelegramAuth(user) {
@@ -14,6 +15,17 @@
       const userDetailsCompoenent = document.getElementById('telegram_user_details')
       userDetailsCompoenent.innerText = `[Logged in as ${user.first_name}  ${user.last_name} ${user.id} ${user.username}]`
 
+//   {
+//     "user": {
+//         "id": 2016064409,
+//         "first_name": "Adam",
+//         "last_name": "Szreiber",
+//         "username": "adam_szreiber",
+//         "auth_date": 1658303535,
+//         "hash": "b63504eddedc8cc9d352259c02a13c9d4d8caf8043a516adf0f95b084cce128c"
+//     }
+//  }
+      
     }
     
   </script>
