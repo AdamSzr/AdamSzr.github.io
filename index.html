@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Telegram Combot Stats Login</title>
   <!-- <meta http-equiv="Content-Security-Policy"  content=" frame-ancestors http://127.0.0.1/" /> -->
-
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="stylesheet" href="">
   <script type="text/javascript" defer>
@@ -17,37 +16,54 @@
         [Logged in as ${user.first_name}  ${user.last_name} ${user.id} ${user.username}] 
         </a>`
 
-//   {
-//     "user": {
-//         "id": 2016064409,
-//         "first_name": "Adam",
-//         "last_name": "Szreiber",
-//         "username": "adam_szreiber",
-//         "auth_date": 1658303535,
-//         "hash": "b63504eddedc8cc9d352259c02a13c9d4d8caf8043a516adf0f95b084cce128c"
-//     }
-//  }
-      
+
+      //   {
+      // "user": {
+      //     "id": 2016064409,
+      //     "first_name": "Adam",
+      //     "last_name": "Szreiber",
+      //     "username": "adam_szreiber",
+      //     "auth_date": 1658303535,
+      //     "hash": "b63504eddedc8cc9d352259c02a13c9d4d8caf8043a516adf0f95b084cce128c"
+      //  }
+      //  }
     }
-    
+
+
+    async function login() {
+      console.log("LOGIN")
+      const input = document.getElementById("one_time_login_url")
+      const url = input.value
+      console.log({ url })
+
+      const response = await fetch( url ) // , { credentials: "include" }
+      console.log({ response })
+      // console.log({headers:response.headers.get()})
+    }
+
   </script>
 </head>
 
 <body>
 
-  <script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-login="test_telegram_daily_bot" data-size="large"
-    data-onauth="onTelegramAuth(user)" data-request-access="write">
-  </script>
+  <script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-login="test_telegram_daily_bot"
+    data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write">
+    </script>
 
-  <iframe id="telegram-login-combot" src="https://oauth.telegram.org/embed/combot?origin=http://127.0.0.1&amp;size=large&amp;request_access=write" width="238" height="40" frameborder="0" scrolling="no" style="overflow: hidden; border: none; height: 40px; width: 276px;"></iframe>
+  <iframe id="telegram-login-combot"
+    src="https://oauth.telegram.org/embed/combot?origin=https://adamszr.github.io&amp;size=large&amp;request_access=write"
+    width="238" height="40" frameborder="0" scrolling="no"
+    style="overflow: hidden; border: none; height: 40px; width: 276px;"></iframe>
 
   <div>
     <p id="telegram_user_details">
       []
     </p>
   </div>
+  <input type="text" id="one_time_login_url" placeholder="ONE_TIME_LOGIN_URL"></input>
+
   <button onclick="login()" id="telegram_login_btn">onClick</button>
-  <iframe src="http://example.com/" ></iframe>
+  <iframe src="http://example.com/"></iframe>
 </body>
 
 </html>
