@@ -1,0 +1,1 @@
+# AdamSzr.github.io
